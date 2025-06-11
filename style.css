@@ -382,14 +382,13 @@ form button:hover {
   margin: 0 auto;
 }
 .footer-grid {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
-  justify-content: space-between;
 }
 .footer-column {
   font-size: 0.95rem;
-  flex: 1 1 200px;
+  text-align: left;
 }
 .footer-logo {
   font-size: 1.4rem;
@@ -434,7 +433,10 @@ form button:hover {
 }
 
 @media (max-width: 600px) {
-  .footer-grid { justify-content: center; text-align: center; }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
   .detail-footer-grid { flex-direction: column; align-items: center; text-align: center; }
 }
 
