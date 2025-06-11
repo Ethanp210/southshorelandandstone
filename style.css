@@ -56,6 +56,15 @@ header.navbar {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+/* Temporary logo styling */
+.logo-img {
+  height: 40px;
+  width: auto;
+  margin-right: 8px;
 }
 .nav-button {
   border: 3px solid #a1cd3a;
