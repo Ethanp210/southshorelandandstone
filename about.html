@@ -38,7 +38,7 @@
       </div>
     </div>
   </header>
-  <div class="container">
+  <div class="container fade-section">
     <h1>About South Shore Land & Stone LLC</h1>
     <p>
       Founded by Ethan Pendowski, South Shore Land & Stone LLC is dedicated to honest, professional land management and excavation services in Northwest Indiana. We serve all of Northwest Indiana, providing land clearing, earth moving, grading, and site preparation for residential, commercial, and contractor clients.
@@ -63,6 +63,19 @@
   <script>
     window.addEventListener('load', function () {
       document.getElementById('loader').style.display = 'none';
+
+      const observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-section').forEach(function(el) {
+        observer.observe(el);
+      });
     });
   </script>
 </body>

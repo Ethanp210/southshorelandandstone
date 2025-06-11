@@ -38,7 +38,7 @@
       </div>
     </div>
   </header>
-  <section class="hero">
+  <section class="hero fade-section">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Land Clearing • Excavation & Landscaping</h1>
@@ -46,7 +46,7 @@
       <a href="contact.html" class="cta-btn">Get a Quote</a>
     </div>
   </section>
-  <section class="stats">
+  <section class="stats fade-section">
     <div class="stats-box">
       <h2>7</h2>
       <p>Counties Served</p>
@@ -60,7 +60,7 @@
       <p>Satisfaction Guaranteed</p>
     </div>
   </section>
-  <div class="container">
+  <div class="container fade-section">
     <h2 style="text-align:center;">Our Services</h2>
     <div class="services-grid">
       <div class="service-card">
@@ -84,7 +84,7 @@
         <p>Prepare your property for landscaping, new builds, or major projects.</p>
       </div>
     </div>
-    <div class="gallery-section">
+    <div class="gallery-section fade-section">
       <h2 style="text-align:center;">Project Gallery</h2>
       <div class="gallery-grid">
         <div class="gallery-item">
@@ -105,12 +105,12 @@
         </div>
       </div>
     </div>
-    <div class="video-section">
+    <div class="video-section fade-section">
       <h2>Watch Us in Action</h2>
       <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="South Shore Land & Stone Video" allowfullscreen></iframe>
       <!-- Replace YouTube link with your own video later -->
     </div>
-    <div class="testimonials-section">
+    <div class="testimonials-section fade-section">
       <h2 style="text-align:center;">Testimonials</h2>
       <div class="testimonials-inner">
         <div class="testimonial-card">
@@ -137,6 +137,19 @@
   <script>
     window.addEventListener('load', function () {
       document.getElementById('loader').style.display = 'none';
+
+      const observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-section').forEach(function(el) {
+        observer.observe(el);
+      });
     });
   </script>
 </body>

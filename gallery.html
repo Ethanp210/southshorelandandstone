@@ -38,7 +38,7 @@
       </div>
     </div>
   </header>
-  <div class="container">
+  <div class="container fade-section">
     <h1>Project Gallery</h1>
     <div class="gallery-grid">
       <div class="gallery-item">
@@ -69,6 +69,19 @@
   <script>
     window.addEventListener('load', function () {
       document.getElementById('loader').style.display = 'none';
+
+      const observer = new IntersectionObserver(function(entries, obs) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            obs.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+
+      document.querySelectorAll('.fade-section').forEach(function(el) {
+        observer.observe(el);
+      });
     });
   </script>
 </body>
