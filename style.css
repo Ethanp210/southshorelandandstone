@@ -111,7 +111,7 @@ h1, h2, h3 {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.45);
   border-radius: inherit;
 }
 
@@ -120,14 +120,14 @@ h1, h2, h3 {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin-bottom: 12px;
   color: #fff;
 }
 
 .hero p {
   font-size: 1.2rem;
-  color: #f2f2f2;
+  color: #f7f7f7;
 }
 
 .cta-btn {
