@@ -7,17 +7,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <nav class="main-nav">
-      <div class="logo">South Shore Land & Stone LLC</div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="book-btn">Contact / Book Now</a></li>
-      </ul>
-    </nav>
+  <header class="navbar">
+    <div class="nav-block">
+      <div class="nav">
+        <nav class="nav-menu left-menu">
+          <a href="index.html" class="nav-link top">Explore</a>
+          <a href="about.html" class="nav-link">About Us</a>
+          <div class="dropdown">
+            <button class="dropdown-toggle nav-link">Services</button>
+            <div class="dropdown-list">
+              <a href="services.html#land-clearing" class="dropdown-link">Land Clearing &amp; Forestry Mulching</a>
+              <a href="services.html#grading" class="dropdown-link">Grading &amp; Excavation</a>
+              <a href="services.html#trenching" class="dropdown-link">Trenching</a>
+              <a href="services.html#dumpster" class="dropdown-link">Dumpster Rentals</a>
+            </div>
+          </div>
+        </nav>
+        <a href="index.html" class="brand"><span class="logo-text">South Shore Land &amp; Stone LLC</span></a>
+        <nav class="nav-menu right-menu">
+          <a href="tel:12196284158" class="nav-link phone">(219)-628-4158</a>
+          <a href="contact.html" class="nav-button">Get a Quote</a>
+        </nav>
+      </div>
+      <div class="menu-button">
+        <div class="menu-icon"></div>
+      </div>
+    </div>
   </header>
   <section class="hero">
     <div class="hero-overlay"></div>
