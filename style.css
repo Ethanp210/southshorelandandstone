@@ -369,7 +369,7 @@ form button:hover {
 }
 
 /* ==== Footer ==== */
-footer {
+.site-footer {
   margin-top: 40px;
   padding: 32px 0 20px 0;
   text-align: center;
@@ -378,12 +378,21 @@ footer {
   font-size: 1.06rem;
   letter-spacing: .03em;
 }
-footer a {
+.site-footer a {
   color: #6b9363;
   text-decoration: underline;
 }
-footer a:hover {
+.site-footer a:hover {
   color: #fff;
+}
+.social-links {
+  margin-top: 12px;
+}
+.social-links img {
+  height: 24px;
+  width: 24px;
+  margin: 0 6px;
+  vertical-align: middle;
 }
 
 /* ==== Responsive ==== */
