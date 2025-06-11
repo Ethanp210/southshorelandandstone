@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Contact / Book Now | South Shore Land & Stone LLC</title>
+  <title>Contact Us | South Shore Land &amp; Stone</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,22 +11,20 @@
 </head>
 <body>
   <header>
-    <nav>
-      <a href="index.html" class="logo"><b>South Shore Land &amp; Stone LLC</b></a>
-      <div class="nav-links">
+    <div class="container">
+      <a href="index.html" class="logo">South Shore Land &amp; Stone</a>
+      <nav class="nav-links">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="gallery.html">Gallery</a>
         <a href="about.html">About</a>
-      </div>
-      <div class="contact-links">
+        <a href="contact.html" class="btn">Get a Quote</a>
         <a href="tel:2197715225" class="phone">(219) 771-5225</a>
-        <a href="contact.html" class="quote-btn">Get a Quote</a>
-      </div>
-    </nav>
+      </nav>
+    </div>
   </header>
   <div class="container">
-    <h1>Contact / Book Now</h1>
+    <h1>Contact Us</h1>
     <form action="https://formspree.io/f/mgvyagaj" method="POST">
       <label for="name">Your Name</label>
       <input type="text" id="name" name="name" required>
@@ -37,14 +35,11 @@
       <label for="email">Email Address</label>
       <input type="email" id="email" name="_replyto" required>
 
-      <label for="address">Service Address (optional)</label>
-      <input type="text" id="address" name="address">
-
       <label for="service">Service Needed</label>
       <select id="service" name="service">
         <option value="Land Clearing">Land Clearing</option>
         <option value="Earth Moving">Earth Moving</option>
-        <option value="Gravel Driveway Repair">Gravel Driveway Repair</option>
+        <option value="Gravel Driveways">Gravel Driveways</option>
         <option value="Site Preparation">Site Preparation</option>
         <option value="Other">Other</option>
       </select>
@@ -52,22 +47,16 @@
       <label for="message">How can we help?</label>
       <textarea id="message" name="message" required></textarea>
 
-      <label for="contact-method">Preferred Contact Method</label>
-      <select id="contact-method" name="contact-method">
-        <option value="Phone">Phone</option>
-        <option value="Email">Email</option>
-      </select>
-
       <button type="submit">Send Message</button>
     </form>
     <p style="margin-top:18px;">
-      Or contact directly:<br>
+      Or reach us directly:<br>
       <b>Email:</b> <a href="mailto:southshorelandandstone@gmail.com">southshorelandandstone@gmail.com</a><br>
       <b>Phone:</b> (219) 771-5225
     </p>
   </div>
   <footer>
-    &copy; 2025 South Shore Land & Stone LLC. All rights reserved.
+    &copy; 2025 South Shore Land &amp; Stone LLC. All rights reserved.
   </footer>
 </body>
 </html>
