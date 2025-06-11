@@ -23,6 +23,16 @@ nav {
   justify-content: space-between;
 }
 
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.logo:hover {
+  color: #82a37b;
+}
+
 .nav-links {
   display: flex;
   gap: 24px;
