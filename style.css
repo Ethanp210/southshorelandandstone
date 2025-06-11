@@ -113,6 +113,12 @@ header.navbar {
   justify-content: center;
   text-align: center;
   position: relative;
+  opacity: 0;
+  animation: heroFade 1s ease-out forwards;
+}
+@keyframes heroFade {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
 }
 .hero-overlay {
   background: rgba(32,48,36,0.6);
