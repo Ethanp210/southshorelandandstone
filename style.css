@@ -392,7 +392,11 @@ form button:hover {
 
 /* ==== Contact Page ==== */
 .contact-hero {
-  background: url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+  background: url("https://landstoneoutdoor.com/wp-content/uploads/2023/05/Untitled-design.png") center right/cover no-repeat;
+  position: relative;
+}
+.contact-hero .hero-overlay {
+  background: rgba(0,0,0,0.55);
 }
 .contact-grid {
   display:flex;
@@ -404,6 +408,10 @@ form button:hover {
 }
 .contact-grid form {
   flex:1;
+  background:#fff;
+  padding:32px;
+  border-radius:8px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 @media (max-width: 800px) {
   .contact-grid {
