@@ -39,6 +39,9 @@ window.addEventListener('load', function () {
     } else if (contactMethod.value === 'email') {
       if (phoneInput) phoneInput.required = false;
       if (emailInput) emailInput.required = true;
+    } else if (contactMethod.value === 'either') {
+      if (phoneInput) phoneInput.required = false;
+      if (emailInput) emailInput.required = false;
     } else {
       if (phoneInput) phoneInput.required = false;
       if (emailInput) emailInput.required = false;
@@ -76,6 +79,12 @@ window.addEventListener('load', function () {
     quoteForm.addEventListener('submit', function(e) {
       e.preventDefault();
       var formMessage = document.getElementById('form-message');
+      if (contactMethod && contactMethod.value === 'either' && (!phoneInput.value && !emailInput.value)) {
+        if (formMessage) {
+          formMessage.textContent = 'Please provide a phone number or an email address.';
+        }
+        return;
+      }
       fetch(this.action, {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
