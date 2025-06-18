@@ -55,6 +55,9 @@ window.addEventListener('load', function () {
     var params = new URLSearchParams(window.location.search);
     var selected = params.get('service');
     if (selected) {
+      if (selected === 'special-projects') {
+        selected = 'other';
+      }
       serviceSelect.value = selected;
     }
     showServiceFields(serviceSelect.value);
