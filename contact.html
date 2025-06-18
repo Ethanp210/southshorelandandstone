@@ -35,7 +35,7 @@
   </header>
 <div class="container fade-section">
   <h1>Request a Quote</h1>
-  <form id="quote-form">
+  <form id="quote-form" action="https://formspree.io/f/yourformid" method="POST">
     <label for="name">Name</label>
     <input type="text" id="name" name="name" required>
 
@@ -44,6 +44,13 @@
 
     <label for="email">Email</label>
     <input type="email" id="email" name="email" required>
+
+    <label for="contact-method">Preferred Contact Method</label>
+    <select id="contact-method" name="contact_method" required>
+      <option value="">Choose an option</option>
+      <option value="phone">Phone</option>
+      <option value="email">Email</option>
+    </select>
 
     <label for="service-select">Service</label>
     <select id="service-select" name="service" required>
@@ -81,6 +88,7 @@
     </div>
 
     <button type="submit">Submit</button>
+    <p id="form-message" class="form-message"></p>
   </form>
 </div>
   <footer class="footer-section">

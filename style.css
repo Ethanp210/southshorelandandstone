@@ -381,6 +381,11 @@ form button {
 form button:hover {
   background: #507b4d;
 }
+.form-message {
+  margin-top: 12px;
+  font-weight: 500;
+  color: #6b9363;
+}
 .service-fields {
   display: none;
 }
