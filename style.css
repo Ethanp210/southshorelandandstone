@@ -45,6 +45,9 @@ header.navbar {
   cursor: pointer;
   transition: color 0.2s;
 }
+.nav-link.email {
+  display: none;
+}
 .nav-link:hover,
 .dropdown-toggle:hover {
   color: #a1cd3a;
@@ -490,7 +493,7 @@ form button:hover {
 
 @media (max-width: 600px) {
   .menu-button { display: flex; }
-  .nav-menu {
+  .nav-menu.left-menu {
     display: none;
     position: absolute;
     top: 100%;
@@ -500,7 +503,10 @@ form button:hover {
     flex-direction: column;
     text-align: center;
   }
-  .nav-block.open .nav-menu { display: flex; }
+  .nav-block.open .nav-menu.left-menu { display: flex; }
+  .nav-menu.right-menu {
+    display: flex;
+  }
   .dropdown-list {
     position: static;
     box-shadow: none;
@@ -509,4 +515,5 @@ form button:hover {
   .nav-link,
   .dropdown-toggle,
   .nav-button { padding: 16px 20px; }
+  .nav-link.email { display: inline-block; }
 }
