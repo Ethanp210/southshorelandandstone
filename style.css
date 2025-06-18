@@ -111,7 +111,30 @@ header.navbar {
 }
 .menu-button {
   display: none;
+  width: 30px;
+  height: 22px;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
 }
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+  content: "";
+  display: block;
+  height: 3px;
+  background: #fff;
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.menu-icon::before { transform: translateY(-7px); }
+.menu-icon::after { transform: translateY(4px); }
+
+.nav-block.open .menu-icon { background: transparent; }
+.nav-block.open .menu-icon::before { transform: rotate(45deg); }
+.nav-block.open .menu-icon::after { transform: rotate(-45deg); }
 
 /* ==== Hero Section ==== */
 .hero {
@@ -465,10 +488,25 @@ form button:hover {
   }
 }
 
-/* ==== Optional Hamburger Mobile Nav (not implemented in HTML) ==== */
-/*
 @media (max-width: 600px) {
-  .nav-menu { display: none; }
-  .nav-active .nav-menu { display: flex; flex-direction: column; }
+  .menu-button { display: flex; }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #000;
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-block.open .nav-menu { display: flex; }
+  .dropdown-list {
+    position: static;
+    box-shadow: none;
+  }
+  .dropdown.open .dropdown-list { display: flex; }
+  .nav-link,
+  .dropdown-toggle,
+  .nav-button { padding: 16px 20px; }
 }
-*/
