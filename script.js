@@ -27,6 +27,24 @@ window.addEventListener('load', function () {
   var serviceSelect = document.getElementById('service-select');
   var serviceSections = document.querySelectorAll('.service-fields');
 
+  var contactMethod = document.getElementById('contact-method');
+  var phoneInput = document.getElementById('phone');
+  var emailInput = document.getElementById('email');
+
+  function updateContactRequirements() {
+    if (!contactMethod) return;
+    if (contactMethod.value === 'phone') {
+      if (phoneInput) phoneInput.required = true;
+      if (emailInput) emailInput.required = false;
+    } else if (contactMethod.value === 'email') {
+      if (phoneInput) phoneInput.required = false;
+      if (emailInput) emailInput.required = true;
+    } else {
+      if (phoneInput) phoneInput.required = false;
+      if (emailInput) emailInput.required = false;
+    }
+  }
+
   function showServiceFields(val) {
     serviceSections.forEach(function(sec) {
       sec.style.display = sec.dataset.service === val ? 'block' : 'none';
@@ -43,6 +61,11 @@ window.addEventListener('load', function () {
     serviceSelect.addEventListener('change', function() {
       showServiceFields(this.value);
     });
+  }
+
+  if (contactMethod) {
+    updateContactRequirements();
+    contactMethod.addEventListener('change', updateContactRequirements);
   }
 
   var quoteForm = document.getElementById('quote-form');
