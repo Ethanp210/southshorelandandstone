@@ -87,6 +87,20 @@ header.navbar {
   border-color: #fff;
   color: #000;
 }
+.quote-btn {
+  background: #6b9363;
+  color: #fff;
+  padding: 10px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  margin-top: 12px;
+  transition: background 0.2s;
+}
+.quote-btn:hover {
+  background: #507b4d;
+}
 .dropdown {
   position: relative;
 }
@@ -366,6 +380,9 @@ form button {
 }
 form button:hover {
   background: #507b4d;
+}
+.service-fields {
+  display: none;
 }
 
 /* ==== Page Loader ==== */

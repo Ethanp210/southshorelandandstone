@@ -23,12 +23,25 @@ window.addEventListener('load', function () {
     });
   }
 
-  document.querySelectorAll('.dropdown-toggle').forEach(function(btn) {
-    btn.addEventListener('click', function(e) {
-      if (window.innerWidth <= 600) {
-        e.preventDefault();
-        this.parentElement.classList.toggle('open');
-      }
+
+  var serviceSelect = document.getElementById('service-select');
+  var serviceSections = document.querySelectorAll('.service-fields');
+
+  function showServiceFields(val) {
+    serviceSections.forEach(function(sec) {
+      sec.style.display = sec.dataset.service === val ? 'block' : 'none';
     });
-  });
+  }
+
+  if (serviceSelect) {
+    var params = new URLSearchParams(window.location.search);
+    var selected = params.get('service');
+    if (selected) {
+      serviceSelect.value = selected;
+    }
+    showServiceFields(serviceSelect.value);
+    serviceSelect.addEventListener('change', function() {
+      showServiceFields(this.value);
+    });
+  }
 });
