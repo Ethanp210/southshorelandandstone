@@ -44,4 +44,28 @@ window.addEventListener('load', function () {
       showServiceFields(this.value);
     });
   }
+
+  var quoteForm = document.getElementById('quote-form');
+  if (quoteForm) {
+    quoteForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var formMessage = document.getElementById('form-message');
+      fetch(this.action, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json' },
+        body: new FormData(this)
+      }).then(function(response) {
+        if (response.ok && formMessage) {
+          formMessage.textContent = 'Thank you! Your request has been sent.';
+          quoteForm.reset();
+        } else if (formMessage) {
+          formMessage.textContent = 'Oops! There was a problem.';
+        }
+      }).catch(function() {
+        if (formMessage) {
+          formMessage.textContent = 'Network error. Please try again later.';
+        }
+      });
+    });
+  }
 });
